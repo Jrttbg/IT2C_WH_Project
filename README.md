@@ -13,7 +13,7 @@ sudo systemctl enable docker \
 sudo systemctl start docker \
 sudo systemctl status docker 
 
-**Instalace Portaineru** \
+**Instalace Portaineru** 
 
 sudo docker run -d \
 --name="portainer" \
