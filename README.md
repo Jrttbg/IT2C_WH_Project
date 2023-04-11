@@ -3,17 +3,17 @@
 
 **Updatování systému**
 
-sudo apt update
-sudo apt upgrade
+sudo apt update \
+sudo apt upgrade \ 
 
-**Instalace Dockeru**
+**Instalace Dockeru** \
 
-sudo apt install docker.io
-sudo systemctl enable docker
-sudo systemctl start docker
-sudo systemctl status docker
+sudo apt install docker.io \
+sudo systemctl enable docker \
+sudo systemctl start docker \
+sudo systemctl status docker \
 
-**Instalace Portaineru**
+**Instalace Portaineru** \
 
 sudo docker run -d \
 --name="portainer" \
