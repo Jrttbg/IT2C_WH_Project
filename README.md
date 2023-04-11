@@ -4,14 +4,14 @@
 **Updatování systému**
 
 sudo apt update \
-sudo apt upgrade \ 
+sudo apt upgrade 
 
 **Instalace Dockeru** \
 
 sudo apt install docker.io \
-sudo systemctl enable docker \
+sudo systemctl enable docker 
 sudo systemctl start docker \
-sudo systemctl status docker \
+sudo systemctl status docker 
 
 **Instalace Portaineru** \
 
