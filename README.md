@@ -2,10 +2,11 @@
 **Dokumentace k WH stránce**
 
 **Updatování systému**
-
+```
 ````console
 sudo apt upgrade 
 ````
+```
 - "sudo apt upgrade" aktualizuje nainstalované balíčky na nejnovější verze.
 ````console
 sudo apt update
