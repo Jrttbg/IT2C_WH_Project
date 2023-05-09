@@ -36,33 +36,30 @@ sudo docker run -d
 -d spustí kontejner v pozadí (detached mode)
 ````console
 --name="portainer"
-````
-- pojmenuje kontejner jako "portainer"
-````console
+
 --restart on-failure
-````
-- automaticky restartuje kontejner v případě chyby
-````console
+
 -p 9000:9000
-````
-- propojí port 9000 hostitelského počítače s portem 9000 v kontejneru
-````console
+
+
 -p 8000:8000
-````
-- propojí port 8000 hostitelského počítače s portem 8000 v kontejneru
-````console
+
 -v /var/run/docker.sock:/var/run/docker.sock
-````
-- sdílí socket Dockeru mezi hostitelským počítačem a kontejnerem
-````console
+
+
 -v portainer_data:/data
-````
+
 - vytvoří oddíl pro ukládání dat Portaineru
-````console
+
 portainer/portainer-ce:latest
 ````
+- pojmenuje kontejner jako "portainer"
+- automaticky restartuje kontejner v případě chyby
+- propojí port 9000 hostitelského počítače s portem 9000 v kontejneru
+- propojí port 8000 hostitelského počítače s portem 8000 v kontejneru
+- sdílí socket Dockeru mezi hostitelským počítačem a kontejnerem
+- vytvoří oddíl pro ukládání dat Portaineru
 - použije nejnovější verzi Portaineru z oficiálního registru Docker.
-
 **Instalace SSH**
 ````console
 sudo snap install core; sudo snap refresh core
