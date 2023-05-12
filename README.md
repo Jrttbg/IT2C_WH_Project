@@ -102,5 +102,20 @@ sudo ufw reload
 - sudo ufw allow 22: Povoluje komunikaci na portu 22 (SSH) pro vzdálený přístup k serveru.
 - sudo ufw allow 80: Povoluje komunikaci na portu 80 (HTTP) pro webovou aplikaci.
 - sudo ufw allow 443: Povoluje komunikaci na portu 443 (HTTPS) pro zabezpečenou webovou aplikaci.
-- sudo ufw reload: Aktualizuje konfiguraci firewallu, aby se změny projevily okamžitě.
-**Automatické updaty**
+- sudo ufw reload: Aktualizuje konfiguraci firewallu, aby se změny projevily okamžitě.\
+\
+\
+**#############\
+  ##Pridani hry##\
+  #############**\
+  zkopiruje slozku dojmena(unity hra) z meho pc do domovskeho adresare uzivatele ubuntu na serveru ( "-i C:......." pouzije klice, aby se ty soubory vubec mohli poslat na server)
+scp -i C:\Users\Vojta.TOPPC\Downloads\ssh-key.key -r "C:\Users\Vojta.TOPPC\Desktop\dojmena" ubuntu@dojmena.ssibrno.cz:~
+
+smaze starou stranku :(
+sudo rm /var/www/html/index.html
+
+premisti soubory ze slozky dojmena na spravne misto
+sudo mv /home/dojmena/* /var/www/html
+
+restartuje apache (idk jestli je to potreba,ale itak jsem to udelal)
+sudo systemctl restart apache2
