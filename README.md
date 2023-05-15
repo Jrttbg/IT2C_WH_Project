@@ -106,9 +106,13 @@ sudo ufw reload
 \
 \
 **#############\
-  ##Pridani hry##\
+  ##Web Content##\
   #############**\
-  zkopiruje slozku dojmena(unity hra) z meho pc do domovskeho adresare uzivatele ubuntu na serveru ( "-i C:......." pouzije klice, aby se ty soubory vubec mohli poslat na server)
+ ````console
+ -i C:.......
+ ````
+ - Příkaz zkopiruje složku d
+zkopiruje slozku dojmena(unity hra) z meho pc do domovskeho adresare uzivatele ubuntu na serveru ( "-i C:......." pouzije klice, aby se ty soubory vubec mohli poslat na server)
 scp -i C:\Users\Vojta.TOPPC\Downloads\ssh-key.key -r "C:\Users\Vojta.TOPPC\Desktop\dojmena" ubuntu@dojmena.ssibrno.cz:~
 
 smaze starou stranku :(
