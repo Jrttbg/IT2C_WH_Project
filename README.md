@@ -105,21 +105,67 @@ sudo ufw reload
 - sudo ufw reload: Aktualizuje konfiguraci firewallu, aby se změny projevily okamžitě.\
 \
 \
-**#############\
+**Zabezpečení**
+````console
+sudo nano /etc/ssh/sshd_config
+````
+- Nejdříve si otevřeme soubor obsahující konfiguraci
+````console
+PasswordAuthentication no
+````
+- Upravíme řádek
+- Příkaz "PasswordAuthentication no" vypne možnost přihlašování pomocí hesla na SSH serveru.
+````console
+PermitRootLogin no
+````
+- Upravíme řádek
+- Zakáže přihlašování přes root
+````console
+Port 489
+AddressFamily inet
+````
+- Přenastaví port na 465535 z důvodu zvýšení bezpečnosti
+````console
+sudo systemctl restart sshd
+````
+- Restartování ssh
+- Pro opětovné přihlášení použijeme:
+````console
+ssh -i .ssh/server_key sysadmin@192.168.56.10 -p 65535
+````
+````console
+sudo ufw deny 22
+````
+- Zakázání portu 22
+````console
+sudo ufw reload
+````
+Aktualizuje konfiguraci firewallu, aby se změny projevily okamžitě.\
+\
+\
+**##############\
   ##Web Content##\
-  #############**\
+  ##############**
  ````console
  -i C:.......
  ````
  - Příkaz zkopiruje složku d
 zkopiruje slozku dojmena(unity hra) z meho pc do domovskeho adresare uzivatele ubuntu na serveru ( "-i C:......." pouzije klice, aby se ty soubory vubec mohli poslat na server)
-scp -i C:\Users\Vojta.TOPPC\Downloads\ssh-key.key -r "C:\Users\Vojta.TOPPC\Desktop\dojmena" ubuntu@dojmena.ssibrno.cz:~
-
-smaze starou stranku :(
+````console
+scp -i C:\Users\*nazevuzivatele*\Downloads\ssh-key.key 
+-r "C:\Users\*nazevuzivatele*\Desktop\dojmena" ubuntu@dojmena.ssibrno.cz:~
+````
+- Smaže starou stránku
+````console
 sudo rm /var/www/html/index.html
+````
 
-premisti soubory ze slozky dojmena na spravne misto
+- Přemístí složky z **dojmena** 
+````console
 sudo mv /home/dojmena/* /var/www/html
+````
 
-restartuje apache (idk jestli je to potreba,ale itak jsem to udelal)
+- Restartuje apache
+````console
 sudo systemctl restart apache2
+````
