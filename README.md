@@ -121,7 +121,7 @@ PermitRootLogin no
 - Upravíme řádek
 - Zakáže přihlašování přes root
 ````console
-Port 489
+Port 65535
 AddressFamily inet
 ````
 - Přenastaví port na 465535 z důvodu zvýšení bezpečnosti
