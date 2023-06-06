@@ -73,22 +73,6 @@ sudo certbot certonly --apache
 ````
 - Používá Certbot k získání SSL certifikátu pro webovou aplikaci, která běží na apache serveru. Tento příkaz se používá, pokud chcete získat certifikát bez automatické konfigurace serveru
 
-**Otestujte automatické obnovení**
-````console
-sudo certbot renew --dry-run
-````
-- Tento příkaz se používá pro testování, zda je nastaven automatický obnovovací proces.
-Příkaz pro obnovení certbot je nainstalován v jednom z následujících umístění:
-````console
-/etc/crontab/
-/etc/cron.*/*
-systemctl list-timers
-````
-- /etc/crontab/ a /etc/cron.*/*: Tyto adresáře obsahují skripty cronu, které se používají k plánování periodických úloh v operačním systému Linux.
-- systemctl list-timers: Zobrazuje seznam plánovaných úloh, které spouští systémový démon timer.
-- sudo ufw enable: Povoluje firewall Uncomplicated Firewall (ufw) v operačním systému Linux.
-
-**Na konec je důležité se ujistit, že vše funguje jak má.** 
 
 **Instalace firewalu**
 ````console
@@ -124,14 +108,14 @@ PermitRootLogin no
 Port 65535
 AddressFamily inet
 ````
-- Přenastaví port na 465535 z důvodu zvýšení bezpečnosti
+- Přenastaví port na 65535 z důvodu zvýšení bezpečnosti
 ````console
 sudo systemctl restart sshd
 ````
 - Restartování ssh
 - Pro opětovné přihlášení použijeme:
 ````console
-ssh -i .ssh/server_key sysadmin@192.168.56.10 -p 65535
+ssh -i .ssh/server_key sysadmin@*ipadresa* -p 65535
 ````
 ````console
 sudo ufw deny 22
