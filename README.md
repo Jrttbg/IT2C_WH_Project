@@ -143,6 +143,18 @@ sudo ufw reload
 Aktualizuje konfiguraci firewallu, aby se změny projevily okamžitě.\
 \
 \
+**Druhý web**
+- Přejdeme na adresář /var/www/html
+````console
+sudo mkdir *nazev druhe domeny*
+````
+- Poté zadáme
+````console
+sudo touch index.html
+````
+- A napíšeme HTML kod
+\
+\
 **##############\
   ##Web Content##\
   ##############**
